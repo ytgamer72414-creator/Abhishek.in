@@ -1,0 +1,48 @@
+<svg class="preloader-svg-logo" viewBox="0 0 580 120" width="100%" height="100%">
+                    <!-- Blueprint Grid lines (Screenshot 3 style) -->
+                    <g class="blueprint-grid" style="opacity: 1;">
+                        <!-- Horizontal baseline and capline -->
+                        <line x1="20" y1="30" x2="560" y2="30"></line>
+                        <line x1="20" y1="90" x2="560" y2="90"></line>
+
+                        <!-- Letter boundaries -->
+                        <line x1="45" y1="20" x2="45" y2="100"></line>
+                        <line x1="95" y1="20" x2="95" y2="100"></line>
+                        <line x1="125" y1="20" x2="125" y2="100"></line>
+                        <line x1="185" y1="20" x2="185" y2="100"></line>
+                        <line x1="235" y1="20" x2="235" y2="100"></line>
+                        <line x1="295" y1="20" x2="295" y2="100"></line>
+                        <line x1="345" y1="20" x2="345" y2="100"></line>
+                        <line x1="395" y1="20" x2="395" y2="100"></line>
+                        <line x1="455" y1="20" x2="455" y2="100"></line>
+                        <line x1="515" y1="20" x2="515" y2="100"></line>
+                    </g>
+
+                    <!-- S -->
+                    <g class="letter-g letter-s">
+                        <path class="draw-path s-path" d="M 95 30 L 45 30 L 45 60 L 95 60 L 95 90 L 45 90" data-svg-origin="45 30" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                    </g>
+                    <!-- N -->
+                    <g class="letter-g letter-n">
+                        <path class="draw-path n-path" d="M 125 90 L 125 30 L 185 90 L 185 30" data-svg-origin="125 30" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                    </g>
+                    <!-- I -->
+                    <g class="letter-g letter-i1">
+                        <path class="draw-path i1-path" d="M 235 45 L 235 90" data-svg-origin="235 45" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                        <rect class="drop-square i1-square" x="230" y="25" width="10" height="10" data-svg-origin="520 85" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0;"></rect>
+                    </g>
+                    <!-- P -->
+                    <g class="letter-g letter-p">
+                        <path class="draw-path p-path" d="M 295 90 L 295 30 L 345 30 L 345 60 L 295 60" data-svg-origin="295 30" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                    </g>
+                    <!-- I -->
+                    <g class="letter-g letter-i2">
+                        <path class="draw-path i2-path" d="M 395 45 L 395 90" data-svg-origin="395 45" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                        <rect class="drop-square i2-square" x="390" y="25" width="10" height="10" data-svg-origin="680 85" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0;"></rect>
+                    </g>
+                    <!-- X -->
+                    <g class="letter-g letter-x">
+                        <path class="draw-path x-path-1" d="M 455 30 L 515 90" data-svg-origin="455 30" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                        <path class="draw-path x-path-2" d="M 515 30 L 455 90" data-svg-origin="455 30" transform="matrix(1,0,0,1,0,0)" style="stroke-dashoffset: 0px; stroke-dasharray: 260px; translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                    </g>
+                </svg>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Klyrex Media</title>
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- ── LOGIN ─────────────────────────────────── -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <h1>⚡ Klyrex Admin</h1>
+      <p>Website Control Panel</p>
+    </div>
+    <form id="loginForm">
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" id="loginEmail" placeholder="admin@email.com" required autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="login-btn">Sign In →</button>
+      <div id="loginErr" class="login-err"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ── DASHBOARD ──────────────────────────────── -->
+<div id="dashboard" class="dashboard" style="display:none">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>⚡ Klyrex Admin</h2>
+      <span>Website Manager</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item" data-tab="videos"><span class="icon">🎬</span> Videos</button>
+      <button class="nav-item" data-tab="colors"><span class="icon">🎨</span> Colors</button>
+      <button class="nav-item" data-tab="content"><span class="icon">📝</span> Content</button>
+      <button class="nav-item" data-tab="pricing"><span class="icon">💰</span> Pricing Plans</button>
+      <button class="nav-item" data-tab="images"><span class="icon">🖼️</span> Images</button>
+      <button class="nav-item" data-tab="loader"><span class="icon">⚙️</span> Loader</button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" target="_blank" class="preview-btn">👁 Preview Website</a>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- VIDEOS TAB -->
+    <section id="tab-videos" class="tab-panel">
+      <div class="tab-header">
+        <h2>🎬 Video Manager</h2>
+        <p>Add, remove or update video URLs shown in the reel slider</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Reel Videos (max 5 recommended)</div>
+        <div id="videoList"></div>
+        <button class="add-video-btn" id="addVideoBtn">+ Add New Video</button>
+      </div>
+      <button class="save-btn" id="saveVideos">💾 Save Videos</button>
+    </section>
+
+    <!-- COLORS TAB -->
+    <section id="tab-colors" class="tab-panel">
+      <div class="tab-header">
+        <h2>🎨 Color Palette</h2>
+        <p>Change the website accent colors</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Primary Accent Color</div>
+        <div class="color-row">
+          <input type="color" id="f-accent">
+          <div class="color-hex field" style="margin:0">
+            <label>Hex Code</label>
+            <input type="text" id="f-accentHex" placeholder="#7c3aed">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Light Accent Color</div>
+        <div class="color-row">
+          <input type="color" id="f-accentL">
+          <div class="color-hex field" style="margin:0">
+            <label>Hex Code</label>
+            <input type="text" id="f-accentLHex" placeholder="#a78bfa">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Live Preview</div>
+        <div class="color-swatch" id="colorSwatch"></div>
+      </div>
+      <button class="save-btn" id="saveColors">💾 Save Colors</button>
+    </section>
+
+    <!-- CONTENT TAB -->
+    <section id="tab-content" class="tab-panel">
+      <div class="tab-header">
+        <h2>📝 Content Manager</h2>
+        <p>Edit all text content on the website</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Site Identity</div>
+        <div class="field"><label>Site Name (shown everywhere)</label><input type="text" id="f-siteName" placeholder="Abhishek Editor"></div>
+        <div class="field"><label>Hero Badge Text</label><input type="text" id="f-heroBadge" placeholder="Abhishek Editor"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Hero Section</div>
+        <div class="field-row">
+          <div class="field"><label>Title Line 1</label><input type="text" id="f-heroTitle1" placeholder="Every Frame"></div>
+          <div class="field"><label>Title Line 2 (italic)</label><input type="text" id="f-heroTitle2" placeholder="Tells a Story"></div>
+        </div>
+        <div class="field"><label>Subtitle</label><input type="text" id="f-heroSub" placeholder="High-end cinematic experiences..."></div>
+      </div>
+      <div class="card">
+        <div class="card-title">About Section</div>
+        <div class="field"><label>Bio / Quote</label><textarea id="f-aboutBio" rows="6" placeholder="Write your bio here..."></textarea></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Social Links</div>
+        <div class="field"><label>Instagram URL</label><input type="url" id="f-instagram" placeholder="https://instagram.com/yourprofile"></div>
+        <div class="field"><label>YouTube URL</label><input type="url" id="f-youtube" placeholder="https://youtube.com/@yourchannel"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">📱 WhatsApp Contact Number</div>
+        <div class="field">
+          <label>Your WhatsApp Number (country code + number, no + or spaces)</label>
+          <input type="text" id="f-waNumber" placeholder="919756289688">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">🇮🇳 India format: <strong style="color:var(--accent2);">91</strong> + 10-digit number &nbsp;|&nbsp; Example: <strong style="color:var(--accent2);">919756289688</strong></p>
+          <p style="font-size:11px;color:var(--muted);margin-top:4px;">⚡ When clients click "START ON WHATSAPP" on any plan, they will be sent directly to <strong>your</strong> WhatsApp with a pre-filled message.</p>
+        </div>
+      </div>
+      <button class="save-btn" id="saveContent">💾 Save Content</button>
+    </section>
+
+    <!-- PRICING TAB -->
+    <section id="tab-pricing" class="tab-panel">
+      <div class="tab-header">
+        <h2>💰 Pricing Plans</h2>
+        <p>Edit plan names, prices, features and WhatsApp messages</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Pricing Section Subtitle</div>
+        <div class="field"><label>Subtitle text below the heading</label><textarea id="f-pricingSubtitle" rows="2" placeholder="Select the perfect plan..."></textarea></div>
+      </div>
+      <!-- Plan 1: BASIC -->
+      <div class="card">
+        <div class="card-title">Plan 1 — BASIC</div>
+        <div class="field-row">
+          <div class="field"><label>Plan Name</label><input type="text" id="f-p1Name" placeholder="BASIC"></div>
+          <div class="field"><label>Tagline</label><input type="text" id="f-p1Tagline" placeholder="Clean. Consistent. Impactful."></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Price</label><input type="text" id="f-p1Price" placeholder="$1,800"></div>
+          <div class="field"><label>Period</label><input type="text" id="f-p1Period" placeholder="/ 30 Reels"></div>
+        </div>
+        <div class="field"><label>Features (one per line — first line starting with "Everything" becomes a highlight)</label><textarea id="f-p1Features" rows="8" placeholder="Feature 1&#10;Feature 2&#10;..."></textarea></div>
+        <div class="field"><label>WhatsApp Message (sent when user clicks button)</label><input type="text" id="f-p1WaMsg" placeholder="Hi Abhishek! I am interested in the BASIC plan."></div>
+      </div>
+      <!-- Plan 2: MEDIUM -->
+      <div class="card">
+        <div class="card-title">Plan 2 — MEDIUM (Popular)</div>
+        <div class="field-row">
+          <div class="field"><label>Plan Name</label><input type="text" id="f-p2Name" placeholder="MEDIUM"></div>
+          <div class="field"><label>Tagline</label><input type="text" id="f-p2Tagline" placeholder="More Motion. More Engagement."></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Price</label><input type="text" id="f-p2Price" placeholder="$3,000"></div>
+          <div class="field"><label>Period</label><input type="text" id="f-p2Period" placeholder="/ 30 Reels"></div>
+        </div>
+        <div class="field"><label>Features (one per line)</label><textarea id="f-p2Features" rows="8" placeholder="Everything in Basic, plus:&#10;Feature 1&#10;..."></textarea></div>
+        <div class="field"><label>WhatsApp Message</label><input type="text" id="f-p2WaMsg" placeholder="Hi Abhishek! I am interested in the MEDIUM plan."></div>
+      </div>
+      <!-- Plan 3: PRO -->
+      <div class="card">
+        <div class="card-title">Plan 3 — PRO</div>
+        <div class="field-row">
+          <div class="field"><label>Plan Name</label><input type="text" id="f-p3Name" placeholder="PRO"></div>
+          <div class="field"><label>Tagline</label><input type="text" id="f-p3Tagline" placeholder="Cinematic. Premium. Unmatched."></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Price</label><input type="text" id="f-p3Price" placeholder="$4,000"></div>
+          <div class="field"><label>Period</label><input type="text" id="f-p3Period" placeholder="/ 30 Reels"></div>
+        </div>
+        <div class="field"><label>Features (one per line)</label><textarea id="f-p3Features" rows="8" placeholder="Everything in Medium, plus:&#10;Feature 1&#10;..."></textarea></div>
+        <div class="field"><label>WhatsApp Message</label><input type="text" id="f-p3WaMsg" placeholder="Hi Abhishek! I am interested in the PRO plan."></div>
+      </div>
+      <button class="save-btn" id="savePricing">💾 Save Pricing Plans</button>
+    </section>
+
+    <!-- IMAGES TAB -->
+    <section id="tab-images" class="tab-panel">
+      <div class="tab-header">
+        <h2>🖼️ Image Manager</h2>
+        <p>Update profile photo / logo used on the website</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Profile / Logo Image</div>
+        <div class="field"><label>Image URL or Relative Path</label><input type="text" id="f-profileImg" placeholder="images/LOGO.png or https://..."></div>
+        <img id="imgPreview" class="img-preview" alt="Preview" style="display:none">
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;">Tip: Place your image in the <code>images/</code> folder and enter the filename. Or use a full URL.</p>
+      </div>
+      <button class="save-btn" id="saveImage">💾 Save Image</button>
+    </section>
+
+    <!-- LOADER TAB -->
+    <section id="tab-loader" class="tab-panel">
+      <div class="tab-header">
+        <h2>⚙️ Preloader Settings</h2>
+        <p>Change the animated text shown while website loads</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Preloader Text</div>
+        <div class="field">
+          <label>Letters to animate (max 8 chars)</label>
+          <input type="text" id="f-preloader" placeholder="ABHISHEK" style="text-transform:uppercase;">
+        </div>
+        <div style="margin-top:16px;background:rgba(0,0,0,0.4);border-radius:10px;padding:24px;text-align:center;">
+          <span style="font-size:48px;font-weight:700;letter-spacing:12px;color:rgba(255,255,255,0.7);font-family:sans-serif;" id="loaderPreview">ABHI</span>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px;">Preview (animated on actual site)</p>
+        </div>
+      </div>
+      <button class="save-btn" id="saveLoader">💾 Save Loader</button>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/admin/admin.js"></script>
+</body>
+</html>
